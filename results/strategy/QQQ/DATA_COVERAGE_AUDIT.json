@@ -1,0 +1,10 @@
+{
+  "original_fhs_origins": 5087,
+  "eligible_origins": 5087,
+  "excluded_prefix": 0,
+  "first_eligible": "2006-06-01 00:00:00",
+  "last_eligible": "2026-08-20 00:00:00",
+  "normalization_unchanged": true,
+  "missing_cash": [],
+  "rule": "Common contiguous eligible suffix; no imputation; original modulo-five offsets"
+}

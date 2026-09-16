@@ -1,0 +1,45 @@
+# Research history summary
+
+Finished-project scope: daily equity risk forecasting, FHS and a simple equity/cash application. All prior evidence is EXPOSED_HISTORY. This is a compact record of decisions, not retained experimental pipelines.
+
+| Extension | Question | Evidence / verdict | Decision |
+| --- | --- | --- | --- |
+| Intraday 5-minute RV | Does the intraday path add predictive and investment information beyond daily OHLC? | WEAK: Path measurement was finer; independent forecast increment weak, portfolio increment unsupported. Original OHLC non-inferiority was partial; the later bounded GK_OWN episode diagnostic passed. | Daily GK retained. No relaxation of the earlier NI standard. |
+| Volume | Does volume improve frozen volatility forecasts? | NOT_SUPPORTED: No stable incremental forecast or portfolio evidence. | Extra predictor not justified. |
+| HARQ | Does quarticity improve risk forecast quality? | NOT_SUPPORTED: Selected implementation failed its gate; not a rejection of all HARQ literature. | No model-specific rescue or tuning. |
+| Semivariance | Do positive/negative components improve total risk, or does a downside target justify an overlay? | NOT_SUPPORTED: Total-risk extension not promoted; downside overlay was NOT RUN after gate failure. | Do not reinterpret an unrun account as tested failure. |
+| Source split | Should RTH and overnight components be forecast separately? | WEAK: Overnight inclusion important; separate prediction increment weak. | Retain aligned gap, retire extra model structure. |
+| Subsampled RV | Does averaging intraday grids improve the risk engine? | NOT_SUPPORTED: No stable engine or investment increment. | Finer measurement did not earn extra machinery. |
+| Hansen–Lunde whole-day adjustment | Does a training-estimated literature combination beat direct sum? | WEAK: KEEP_DIRECT_SUM; weak incremental practical value, no proof that direct sum is latent-variance optimal. | No weight optimization using portfolio performance. |
+| GARCH baseline | Does HAR add beyond classical volatility clustering? | PARTIAL: Joint equity HAR-over-GARCH verdict WEAK despite positive aggregate loss improvements. | Not stopped: canonical formal benchmark retained without specification changes. |
+| Gold volatility and GC measurement | Is weak GLD increment caused by US-session representation of a global asset? | DATA_BLOCKED: GLD predictability SUPPORTED, HAR-vs-GARCH INCONCLUSIVE. Reliable obtainable contract-level GC intraday data not secured: DATA_BLOCKED. | Do not substitute unverifiable continuous futures or tune Gold. |
+| Treasury volatility transfer | Does equity architecture transfer to IEF/TLT holding risk? | PARTIAL: IEF SUPPORTED, TLT WEAK. HAR vs Rolling22 MSE/QLIKE gains IEF20.63/12.33%, TLT23.66/11.11%. Both HAR-vs-GARCH INCONCLUSIVE; ex-shock QLIKE vs GARCH slightly negative. | Useful univariate evidence, not canonical equity/cash strategy or latent Treasury risk. |
+| Risk co-movement and relative risk | Do equity and bond risk magnitudes rise together or diverge? | PARTIAL: SPY–IEF forecast/realized log-risk Pearson .646/.614; divergence-value SUPPORTED, divergence-structure WEAK. Abs forecast percentile gap>=.50 frequency8.95% missed10% gate. | Descriptive magnitude information does not establish hedge or covariance value. |
+| Stock–bond return dependence | Is return correlation negative and persistent? | PARTIAL: Dependence is regime-dependent, with simple persistence;42/63D capture substantial information. | No universal negative-correlation or diversification guarantee. |
+| cDCC / covariance forecasting | Does fitted correlation improve the covariance engine and portfolios? | WEAK: SPY rho increment WEAK vs42D, SUPPORTED vs63D; covariance WEAK, primary predictive gate CLOSED so fixed portfolio NOT RUN. QQQ rho passed; fixed-portfolio increment WEAK and allocation gate CLOSED. | No optimizer rescue. Both allocations NOT RUN, not negative tested allocation returns. |
+| Volatility to return distribution | Does high volatility predict lower expected return or only wider outcomes? | NOT_SUPPORTED: Mean relation INCONCLUSIVE, monotonicity and return timing NOT_SUPPORTED; descriptive raw tails widened. Flat-mean equivalence also not established. | No directional portfolio permitted; later FHS established scale value separately. |
+| Volatility × momentum / drawdown | Do high-risk TR5/drawdown states predict reversal or continuation? | NOT_SUPPORTED: TR5 descriptive interaction interesting; OOS increment insufficient. Large drawdown plus high risk not a stable rebound or continuation signal. | Close directional branch; no filter or classifier rescue. |
+| Conditional tail risk | Does a standardized tail shape state add beyond volatility scale? | SUPPORTED: SPY FHS vsHS pinball gain12.877%, Brier2 gain4.443%, pathMSE gain24.355%; VaR/ES/probability/path supported. >5% rare-event inference WEAK. Standardized left-tail state not supported; STATE_FHS NOT RUN. | Keep HS/FHS. Retire extra shape models; do not assert CAViaR/EVT were tested when they were not. |
+| Decision layer | Are ES/probability mappings materially distinct from VOL? | WEAK: Mappings overlap heavily; ES increment NOT_SUPPORTED, probability WEAK. Dynamic vs matched exposure WEAK; no prospective candidate. | Keep Full VOL as transparent historical application, not superior dynamic alpha or deployment approval. |
+| Core + VOL | Does a permanent core improve long-term participation? | PARTIAL: Higher CAGR retention and exposure; weaker volatility/tail/drawdown protection. No independent superiority claim. | Former preference example; now immutable audit references only, outside the public application. |
+| Conditional Treasury parking | Can residual cash enter IEF without losing Full VOL protection? | WEAK: SPY retention85.31% Cash vs90.18%Always and91.28%Corr, common2004+ sample. Conditional CAGR vsAlways +4.84/−4.34/−5.95bp yearly medians.2022 underperformedCash;QQQ onlypartial. FinalWEAK/KEEP_CASH/no candidate. | IEF is duration risk, not risk-free cash. Targets unchanged; natural/band drift separated; CORE budget-infeasible flagged without cutting equity. |
+| Daily GK long history | Can daily-only risk work across decades? | SUPPORTED: Forecast core supported; original composite portfolio gate closed for recent rare-event coverage. Subsequent portfolio research separately authorized, deployment remained closed. | Keep risk core; preserve gate history rather than retroactively changing the original decision. |
+| Portfolio targeting and long-history mapping | Is there a broad target/core region rather than a historical optimum? | WEAK: Risk reduction visible; unique HAR portfolio advantage weak. No strictly robust cross-asset prospective candidate. | Retire search surfaces. Full VOL is the public application; old Core rows remain only for frozen parity. |
+| Multi-asset dynamic allocation | Can Treasury/Gold parking outperform static diversification? | WEAK: Diversification useful; dynamic/HAR-specific architecture not robustly promoted. | No further assets, optimizers or allocation research. |
+| Fast–slow conservative mapping | Does max(HAR,Current) improve sudden-risk response? | WEAK: No architecture met complete return/risk requirements. | No weighted-forecast tuning. |
+
+Historical point estimates are specific to their original samples; the IEF common sample is not the final full-history cash application. A closed gate can mean downstream work was NOT RUN, not empirically rejected. The mainline strategy is an application example with the original weak cross-regime decision, not a historical-winner deployment. Private detailed timeline, per-branch methods and cleanup manifest are excluded from Git.
+## Post-convergence extensions
+
+Post-convergence extensions produced useful forecasting and diversification evidence, but none provided sufficiently stable portfolio-level increment to justify changing the canonical 5D architecture.
+
+| Extension | Research question | Main finding | Final decision |
+| --- | --- | --- | --- |
+| Gold allocation | Can Gold improve the risk architecture? | Strategic diversification value; no robust dynamic increment | Separate research domain; summary only |
+| Defensive parking | Do de-risked funds beat 3M cash elsewhere? | IEF/TLT unreliable; Gold opportunity return carries substantial tail risk | Keep cash; retire implementation |
+| Full VOL bands | Can trading fall without losing control? | No robust band region | Retired |
+| 21D forecasting | Is monthly risk forecastable? | Yes; simple HAR remains sufficient | Monitoring / research finding |
+| Adaptive 21D | Update forecasts during the month? | Reforecast yes; frequent parameter refit no | Methodological finding |
+| 5D–21D portfolio | Does term structure improve exposure decisions? | Nearly collinear forecasts; no incremental portfolio value | Keep 5D |
+
+[Post-convergence summary](POST_CONVERGENCE_RESEARCH_SUMMARY.md) records the retained evidence, limitations and final dispositions. These are historical findings, not active portfolio components.

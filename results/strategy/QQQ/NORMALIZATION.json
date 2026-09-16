@@ -1,0 +1,38 @@
+{
+  "symbol": "QQQ",
+  "cutoff": "2006-06-01 20:00:00+00:00",
+  "training_origins": 1020,
+  "train_first": "2002-05-07 00:00:00",
+  "train_last": "2006-05-23 00:00:00",
+  "latest_target_end": "2006-06-01 13:30:00+00:00",
+  "budgets": {
+    "PROXY": {
+      "anchor": 0.8,
+      "core": 0.5,
+      "probability_cap": 0.05,
+      "s0": 0.02872646111014472,
+      "E0": 1.86283726269211,
+      "Q0": 1.3549013745407463,
+      "C0": 0.0009282191780821918,
+      "Bvol": 0.02298116888811578,
+      "BES": 0.04262453390938624,
+      "L": 0.030951573479444664,
+      "annualized_proxy_vol_budget": 0.16315011438117558
+    },
+    "ZERO": {
+      "anchor": 0.8,
+      "core": 0.5,
+      "probability_cap": 0.05,
+      "s0": 0.02872646111014472,
+      "E0": 1.86283726269211,
+      "Q0": 1.3549013745407463,
+      "C0": 0.0,
+      "Bvol": 0.02298116888811578,
+      "BES": 0.042810177745002675,
+      "L": 0.031137217315061104,
+      "annualized_proxy_vol_budget": 0.16315011438117558
+    }
+  },
+  "calibration": "Once, training-only; same .80 appetite and .50 core for both assets",
+  "cash_vintage": "PIT_VINTAGE_PARTIAL"
+}

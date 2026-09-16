@@ -1,0 +1,38 @@
+{
+  "symbol": "SPY",
+  "cutoff": "2000-05-01 20:00:00+00:00",
+  "training_origins": 1025,
+  "train_first": "1996-04-01 00:00:00",
+  "train_last": "2000-04-20 00:00:00",
+  "latest_target_end": "2000-05-01 13:30:00+00:00",
+  "budgets": {
+    "PROXY": {
+      "anchor": 0.8,
+      "core": 0.5,
+      "probability_cap": 0.05,
+      "s0": 0.024210385890210857,
+      "E0": 2.1297170001507784,
+      "Q0": 1.4915114157085212,
+      "C0": 0.0011027397260273974,
+      "Bvol": 0.019368308712168686,
+      "BES": 0.0410284683832686,
+      "L": 0.028667505601960925,
+      "annualized_proxy_vol_budget": 0.137501351525872
+    },
+    "ZERO": {
+      "anchor": 0.8,
+      "core": 0.5,
+      "probability_cap": 0.05,
+      "s0": 0.024210385890210857,
+      "E0": 2.1297170001507784,
+      "Q0": 1.4915114157085212,
+      "C0": 0.0,
+      "Bvol": 0.019368308712168686,
+      "BES": 0.04124901632847408,
+      "L": 0.028888053547166403,
+      "annualized_proxy_vol_budget": 0.137501351525872
+    }
+  },
+  "calibration": "Once, training-only; same .80 appetite and .50 core for both assets",
+  "cash_vintage": "PIT_VINTAGE_PARTIAL"
+}

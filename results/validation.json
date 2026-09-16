@@ -1,0 +1,202 @@
+{
+  "status": "PASS",
+  "scope": "Final consolidation, no new research specification",
+  "full_refit": "PASS",
+  "fresh_output_replay": "PASS",
+  "fresh_source_isolation": "PASS",
+  "fresh_room_limit": "Same pinned environment and explicit hash-checked local data; not a remote clone or a clean dependency installation",
+  "tests": 22,
+  "clone_tests": 22,
+  "isolated_modules": 19,
+  "published_artifacts_exact": 41,
+  "unchanged_frozen_modules": {
+    "src/volatility_risk/measurement.py": true,
+    "src/volatility_risk/forecast.py": true,
+    "src/volatility_risk/garch.py": true,
+    "src/volatility_risk/benchmark_evaluation.py": true,
+    "src/volatility_risk/benchmark_review.py": true,
+    "src/volatility_risk/inference.py": true
+  },
+  "parity": {
+    "status": "PASS",
+    "scope": "Frozen canonical numerical replay; separate scalar accounting; no claim of external peer review",
+    "checks": {
+      "FORECASTS.parquet": {
+        "rows": 71370,
+        "columns": 6,
+        "max_absolute_numeric_error": 0.0
+      },
+      "FORECASTS_WITH_GARCH.parquet": {
+        "rows": 85644,
+        "columns": 6,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_FHS": {
+        "rows": 13232,
+        "columns": 28,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_tail_metrics": {
+        "rows": 32,
+        "columns": 23,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_tail_intervals": {
+        "rows": 160,
+        "columns": 15,
+        "max_absolute_numeric_error": 1.5543122344752192e-15
+      },
+      "SPY_strategy_metrics": {
+        "rows": 1650,
+        "columns": 44,
+        "max_absolute_numeric_error": 9.992007221626409e-16
+      },
+      "SPY_independent_ledger": {
+        "rows": 940500,
+        "max_cashflow_error": 1.7763568394002505e-15
+      },
+      "SPY_weights_PROXY": {
+        "rows": 6270,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_weights_ZERO": {
+        "rows": 6270,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_FHS": {
+        "rows": 10174,
+        "columns": 28,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_tail_metrics": {
+        "rows": 32,
+        "columns": 23,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_tail_intervals": {
+        "rows": 160,
+        "columns": 15,
+        "max_absolute_numeric_error": 8.881784197001252e-16
+      },
+      "QQQ_strategy_metrics": {
+        "rows": 1500,
+        "columns": 44,
+        "max_absolute_numeric_error": 1.2212453270876722e-15
+      },
+      "QQQ_independent_ledger": {
+        "rows": 763050,
+        "max_cashflow_error": 3.552713678800501e-15
+      },
+      "QQQ_weights_PROXY": {
+        "rows": 5087,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_weights_ZERO": {
+        "rows": 5087,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      }
+    }
+  },
+  "garch": {
+    "status": "PASS",
+    "vintages": 681,
+    "daily_forecasts": 14274,
+    "maximum_forecast_relative_error": 0.0,
+    "maximum_bridge_error": 0.0,
+    "maximum_BIC_error": 7.275957614183426e-12,
+    "maximum_interval_error": 8.881784197001252e-15,
+    "old_model_forecasts_unchanged": true,
+    "reviewer": "Same agent using independent library refiltering, vector recursion and direct block-index sampling; not external peer review"
+  },
+  "fresh_room_parity": {
+    "status": "PASS",
+    "scope": "Frozen canonical numerical replay; separate scalar accounting; no claim of external peer review",
+    "checks": {
+      "FORECASTS.parquet": {
+        "rows": 71370,
+        "columns": 6,
+        "max_absolute_numeric_error": 0.0
+      },
+      "FORECASTS_WITH_GARCH.parquet": {
+        "rows": 85644,
+        "columns": 6,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_FHS": {
+        "rows": 13232,
+        "columns": 28,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_tail_metrics": {
+        "rows": 32,
+        "columns": 23,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_tail_intervals": {
+        "rows": 160,
+        "columns": 15,
+        "max_absolute_numeric_error": 1.5543122344752192e-15
+      },
+      "SPY_strategy_metrics": {
+        "rows": 1650,
+        "columns": 44,
+        "max_absolute_numeric_error": 9.992007221626409e-16
+      },
+      "SPY_independent_ledger": {
+        "rows": 940500,
+        "max_cashflow_error": 1.7763568394002505e-15
+      },
+      "SPY_weights_PROXY": {
+        "rows": 6270,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "SPY_weights_ZERO": {
+        "rows": 6270,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_FHS": {
+        "rows": 10174,
+        "columns": 28,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_tail_metrics": {
+        "rows": 32,
+        "columns": 23,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_tail_intervals": {
+        "rows": 160,
+        "columns": 15,
+        "max_absolute_numeric_error": 8.881784197001252e-16
+      },
+      "QQQ_strategy_metrics": {
+        "rows": 1500,
+        "columns": 44,
+        "max_absolute_numeric_error": 1.2212453270876722e-15
+      },
+      "QQQ_independent_ledger": {
+        "rows": 763050,
+        "max_cashflow_error": 3.552713678800501e-15
+      },
+      "QQQ_weights_PROXY": {
+        "rows": 5087,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      },
+      "QQQ_weights_ZERO": {
+        "rows": 5087,
+        "columns": 3,
+        "max_absolute_numeric_error": 0.0
+      }
+    }
+  },
+  "input_hashes": "PASS",
+  "clone_input_hashes": "PASS",
+  "review_independence": "Separate scalar accounts, library refilter and block-index calculations by the same researcher; not external peer review"
+}

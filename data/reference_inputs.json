@@ -1,0 +1,10 @@
+{
+  "SPY": {
+    "file": "SPY.csv",
+    "sha256": "9e2420a3e5087ce0d4bf64a36783424ab20a2f35d443eceadd503dab7022aed0"
+  },
+  "QQQ": {
+    "file": "QQQ.csv",
+    "sha256": "a2cb491410db02025fbe3dff9b07a0a20322c09b16f16d8a03b7e07f13d7ee16"
+  }
+}

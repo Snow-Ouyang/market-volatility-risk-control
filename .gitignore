@@ -1,0 +1,29 @@
+# Private archives and vendor data must never enter the public repository.
+research_archive_private/
+data/*
+!data/README.md
+!data/reference_inputs.json
+!data/mainline_inputs.json
+artifacts/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.env
+.env.*
+*credentials*
+*secret*
+*alpaca*
+*minute*
+*.ipynb
+scratch/
+tmp/
+# Retired laboratory, covariance/allocation and vendor runtime surfaces.
+research/
+vendor_data/
+raw_minute_data/
+old_ledgers/
+notebooks/

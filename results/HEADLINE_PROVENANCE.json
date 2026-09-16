@@ -1,0 +1,20 @@
+{
+  "generated_by": "volatility_risk.final_reporting.render",
+  "history": "EXPOSED_HISTORY",
+  "configuration": {
+    "cash": "PROXY",
+    "cost_bps": 1,
+    "offset": 0,
+    "rebalance_sessions": 5
+  },
+  "source_files": {
+    "forecast/DATA_COVERAGE.csv": "8c26b1950a2c814d5460b89553301aeec25f6b541424d276c2f3224f25497576",
+    "forecast/BENCHMARK_LOSS_GAINS.csv": "675f395a06ac6133acbbb6a76a33f3f7754873b801260272a8c2e641d2f88dcf",
+    "tail/SPY/FORECAST_METRICS.csv": "a98bf9e176ace47c20197932d2b2e2bc07f10c23e409c07d0fcc78a515c518f7",
+    "strategy/SPY/PORTFOLIO_RESULTS.csv": "aa63a9ef3f92bda1e355f0dd6142775d8817421ad698f7271e9fb83d6fa0ee93",
+    "strategy/SPY/RETURN_RISK_ATTRIBUTION.csv": "f9f9ee522214e2d3799dbbf8f3a087a5bd6e9878e6d663ccdc7f399a80c6c516",
+    "tail/QQQ/FORECAST_METRICS.csv": "1d8f540999caeba1584c42197d32891b686820d720b24b57c45bd5539d49a578",
+    "strategy/QQQ/PORTFOLIO_RESULTS.csv": "1a1561ae00e8f01e74731518d06a586b0c741e307115d4966776737124602a24",
+    "strategy/QQQ/RETURN_RISK_ATTRIBUTION.csv": "7c0e973dd3cdc555de02a3b7423006ba83fb9a407c83a2290df6e7a2128dc04e"
+  }
+}
