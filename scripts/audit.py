@@ -78,6 +78,15 @@ def audit(root=ROOT, index=False):
                         errors.append(
                             f"Unsupported math macro: {rel}:{line_number}: {macro}"
                         )
+            in_display_math = False
+            for line_number, line in enumerate(text.splitlines(), start=1):
+                if line.strip() == "$$":
+                    in_display_math = not in_display_math
+                    continue
+                if in_display_math and re.match(r"^\s*[-+]\s", line):
+                    errors.append(
+                        f"Markdown list marker inside display math: {rel}:{line_number}"
+                    )
         for pattern in [
             r"[A-Za-z]:[\\/](?:Users|ProgramData)[\\/]",
             r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b",

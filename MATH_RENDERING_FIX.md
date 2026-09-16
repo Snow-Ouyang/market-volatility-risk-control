@@ -11,5 +11,6 @@ This presentation-only change fixes two README formulas rejected by GitHub's mat
 - Public audit now fails with a file and line number if public Markdown contains the unsupported `operatorname`, `DeclareMathOperator` or `newcommand` macro forms.
 - A follow-up GitHub check showed that Markdown preprocessing also stripped the escape from brace delimiters, turning the intended left-brace delimiter into an invalid command. Both affected formulas now use ordinary parentheses and no escaped brace delimiters. The audit rejects those fragile left-brace and right-brace delimiter forms as well.
 - The same preprocessing converts punctuation-based spacing commands into visible punctuation. All such spacing commands were removed from README math and replaced with ordinary source spaces; the audit now prevents their return.
+- The multi-line GK definition contained a continuation line beginning with a bare minus sign. GitHub parsed it as a Markdown bullet before math rendering. An empty LaTeX group now precedes that minus sign, preserving the subtraction while preventing list parsing; the audit rejects bare list markers inside display math.
 
 Validation status: **PASS**. The generated README exactly matches the checked-in README; unsupported macro count is zero; all 22 tests pass; public audit, presentation audit, 61 local links and seven README image links pass.

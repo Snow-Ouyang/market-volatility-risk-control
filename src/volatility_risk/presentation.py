@@ -685,7 +685,7 @@ $$
 \begin{{aligned}}
 \mathrm{{GK}}_{{\mathrm{{RTH}},t}}
 &= \frac{{1}}{{2}}\left[\log\left(\frac{{H_t}}{{L_t}}\right)\right]^2
-- (2\log 2 - 1)\left[\log\left(\frac{{C_t}}{{O_t}}\right)\right]^2 \\
+{{}}- (2\log 2 - 1)\left[\log\left(\frac{{C_t}}{{O_t}}\right)\right]^2 \\
 \mathrm{{GAP2}}_t
 &= \left[\log\left(\frac{{O_t}}{{C_{{t-1}}}}\right)\right]^2 \\
 \mathrm{{STATE}}_t
