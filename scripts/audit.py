@@ -67,6 +67,10 @@ def audit(root=ROOT, index=False):
                 r"\newcommand",
                 r"\left\{",
                 r"\right\}",
+                r"\,",
+                r"\;",
+                r"\:",
+                r"\!",
             )
             for line_number, line in enumerate(text.splitlines(), start=1):
                 for macro in unsupported_math_macros:

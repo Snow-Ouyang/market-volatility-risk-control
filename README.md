@@ -114,10 +114,10 @@ $$
 \begin{aligned}
 w_t^{\mathrm{equity}}
 &= \min\left(
-1,\,
+1,
 \max\left(
-0,\,
-\frac{B}{\sqrt{5\,\widehat{v}_{t,5}^{\mathrm{HAR}}}}
+0,
+\frac{B}{\sqrt{5 \widehat{v}_{t,5}^{\mathrm{HAR}}}}
 \right)
 \right), \\
 w_t^{\mathrm{cash}}
@@ -130,7 +130,7 @@ Here $B$ is the frozen risk budget and $\widehat{v}_{t,5}^{\mathrm{HAR}}$ foreca
 The existing budget is calibrated once at the first eligible FHS vintage:
 
 $$
-B = 0.8\,Q_{0.5}\left((s_\tau)_{\tau \le t_0}\right).
+B = 0.8 Q_{0.5}\left((s_\tau)_{\tau \le t_0}\right).
 $$
 
 Here $Q_{0.5}$ is the median of the past eligible risk-scale observations available at the initial calibration date $t_0$. The budget is neither newly optimized nor reset to a 15% target. The transparent self-financing engine retains units/cash, natural drift, initial funding fees, no terminal liquidation and the original five rebalance offsets; no second accounting engine is introduced.
@@ -144,7 +144,7 @@ Cash uses the frozen DGS3MO 3M Treasury **yield-carry approximation**: at least 
 This plot reuses the existing past-only percentile buckets; it does not regroup the sample. Each point shows
 
 $$
-\mathrm{RiskScale}_b\;(\%) = 100\sqrt{252\,\overline{v}_b},
+\mathrm{RiskScale}_b (\%) = 100\sqrt{252 \overline{v}_b},
 $$
 
 where $\overline{v}_b$ is the bucket mean daily variance proxy. It is an annualized quadratic-risk scale, not the volatility of a five-day endpoint return. The mean curves show risk ranking and average calibration; they are not confidence bands.
@@ -153,7 +153,7 @@ Daily input history spans SPY 1993–2026 and QQQ 1999–2026. Mature forecast w
 
 ## Tail-risk interpretation
 
-Filtered Historical Simulation (FHS) uses $\sqrt{5\,\widehat{v}_{t,5}^{\mathrm{HAR}}}$ to scale mature empirical five-day standardized returns and six-open drawdown paths. The fixed expanding history, 1,008-observation minimum and monthly updates remain unchanged. It adds useful VaR, ES, loss-probability and path-risk information over unfiltered HS: [tail scores](results/tail/HEADLINE_METRICS.csv).
+Filtered Historical Simulation (FHS) uses $\sqrt{5 \widehat{v}_{t,5}^{\mathrm{HAR}}}$ to scale mature empirical five-day standardized returns and six-open drawdown paths. The fixed expanding history, 1,008-observation minimum and monthly updates remain unchanged. It adds useful VaR, ES, loss-probability and path-risk information over unfiltered HS: [tail scores](results/tail/HEADLINE_METRICS.csv).
 
 Volatility scale captures much of the useful dynamic tail information; a separate dynamic standardized left-tail state was not supported. Rare >5% losses have weaker inference than the primary >2% event. Distribution width and downside scale are more predictable here than return mean or direction.
 
