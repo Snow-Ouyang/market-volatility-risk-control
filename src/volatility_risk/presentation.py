@@ -715,9 +715,13 @@ Here $m$ is the current monthly training vintage, $\overline{{\mathrm{{STATE}}}}
 $$
 \begin{{aligned}}
 w_t^{{\mathrm{{equity}}}}
-&= \operatorname{{clip}}\left(
-\frac{{B}}{{\sqrt{{5\,\widehat{{v}}_{{t,5}}^{{\mathrm{{HAR}}}}}}}},\,0,\,1
-\right), \\
+&= \min\left\{{
+1,\,
+\max\left[
+0,\,
+\frac{{B}}{{\sqrt{{5\,\widehat{{v}}_{{t,5}}^{{\mathrm{{HAR}}}}}}}}
+\right]
+\right\}}, \\
 w_t^{{\mathrm{{cash}}}}
 &= 1 - w_t^{{\mathrm{{equity}}}}.
 \end{{aligned}}
@@ -725,7 +729,13 @@ $$
 
 Here $B$ is the frozen risk budget and $\widehat{{v}}_{{t,5}}^{{\mathrm{{HAR}}}}$ forecasts the mean daily holding-risk proxy $Y_{{t,5}}$.
 
-The existing budget is calibrated once at the first eligible FHS vintage as $0.8\times\operatorname{{median}}(\text{{past risk scale}})$. It is neither newly optimized nor reset to a 15% target. The transparent self-financing engine retains units/cash, natural drift, initial funding fees, no terminal liquidation and the original five rebalance offsets; no second accounting engine is introduced.
+The existing budget is calibrated once at the first eligible FHS vintage:
+
+$$
+B = 0.8\,Q_{{0.5}}\left(\left\{{s_\tau\right\}}_{{\tau \le t_0}}\right).
+$$
+
+Here $Q_{{0.5}}$ is the median of the past eligible risk-scale observations available at the initial calibration date $t_0$. The budget is neither newly optimized nor reset to a 15% target. The transparent self-financing engine retains units/cash, natural drift, initial funding fees, no terminal liquidation and the original five rebalance offsets; no second accounting engine is introduced.
 
 Cash uses the frozen DGS3MO 3M Treasury **yield-carry approximation**: at least two prior stock sessions, maximum seven-calendar-day quote age, ACT/365 carry locked for each block. It is not an executable T-bill total-return index. Release-vintage provenance remains PARTIAL. Stale quotes are not filled; the original SPY September-2001 eligibility break is retained. ZERO cash and 0/1/3bp costs remain in the full [SPY results](results/strategy/SPY/PORTFOLIO_RESULTS.csv) and [QQQ results](results/strategy/QQQ/PORTFOLIO_RESULTS.csv).
 

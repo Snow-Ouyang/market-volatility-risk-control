@@ -25,6 +25,7 @@ TOP_FILES = {
     "FINAL_POST_CONVERGENCE_SUMMARY.md",
     "POST_CONVERGENCE_CLEANUP_REPORT.md",
     "FINAL_REPO_AUDIT.md",
+    "MATH_RENDERING_FIX.md",
 }
 DIRECTORIES = {"src", "scripts", "tests", "results"}
 DATA_FILES = {"README.md", "reference_inputs.json", "mainline_inputs.json"}
@@ -59,6 +60,18 @@ def audit(root=ROOT, index=False):
         if p.suffix.lower() in [".png", ".pdf"]:
             continue
         text = p.read_text(encoding="utf-8")
+        if p.suffix == ".md":
+            unsupported_math_macros = (
+                r"\operatorname{",
+                r"\DeclareMathOperator",
+                r"\newcommand",
+            )
+            for line_number, line in enumerate(text.splitlines(), start=1):
+                for macro in unsupported_math_macros:
+                    if macro in line:
+                        errors.append(
+                            f"Unsupported math macro: {rel}:{line_number}: {macro}"
+                        )
         for pattern in [
             r"[A-Za-z]:[\\/](?:Users|ProgramData)[\\/]",
             r"\b(?:AKIA|ASIA)[A-Z0-9]{16}\b",

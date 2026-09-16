@@ -14,7 +14,7 @@
     "strategy/SPY/RETURN_RISK_ATTRIBUTION.csv": "f9f9ee522214e2d3799dbbf8f3a087a5bd6e9878e6d663ccdc7f399a80c6c516",
     "strategy/QQQ/RETURN_RISK_ATTRIBUTION.csv": "7c0e973dd3cdc555de02a3b7423006ba83fb9a407c83a2290df6e7a2128dc04e"
   },
-  "readme_sha256": "e0b5d1dd29a58b0a6aa2d78e6ffe0fdfd0ab2167959212f91e43d00f6bedab15",
+  "readme_sha256": "2448311fdf2f75590f356b301bcd4375b3dae0c823303ccbac00c2a5fc511878",
   "figures": {
     "FORECAST_ACCURACY.pdf": "2e7d5c3ce1bbe8cf2140beac5c37c37b3bd639c1b00ecbe2a1f7c46dc4414a71",
     "FORECAST_ACCURACY.png": "ad896bc69ac87cd6874cdd908ce5f121013b55717f3ea7b467aef21a531d9bf4",
