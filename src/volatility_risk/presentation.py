@@ -715,13 +715,13 @@ Here $m$ is the current monthly training vintage, $\overline{{\mathrm{{STATE}}}}
 $$
 \begin{{aligned}}
 w_t^{{\mathrm{{equity}}}}
-&= \min\left\{{
+&= \min\left(
 1,\,
-\max\left[
+\max\left(
 0,\,
 \frac{{B}}{{\sqrt{{5\,\widehat{{v}}_{{t,5}}^{{\mathrm{{HAR}}}}}}}}
-\right]
-\right\}}, \\
+\right)
+\right), \\
 w_t^{{\mathrm{{cash}}}}
 &= 1 - w_t^{{\mathrm{{equity}}}}.
 \end{{aligned}}
@@ -732,7 +732,7 @@ Here $B$ is the frozen risk budget and $\widehat{{v}}_{{t,5}}^{{\mathrm{{HAR}}}}
 The existing budget is calibrated once at the first eligible FHS vintage:
 
 $$
-B = 0.8\,Q_{{0.5}}\left(\left\{{s_\tau\right\}}_{{\tau \le t_0}}\right).
+B = 0.8\,Q_{{0.5}}\left((s_\tau)_{{\tau \le t_0}}\right).
 $$
 
 Here $Q_{{0.5}}$ is the median of the past eligible risk-scale observations available at the initial calibration date $t_0$. The budget is neither newly optimized nor reset to a 15% target. The transparent self-financing engine retains units/cash, natural drift, initial funding fees, no terminal liquidation and the original five rebalance offsets; no second accounting engine is introduced.

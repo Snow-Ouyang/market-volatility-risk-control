@@ -65,6 +65,8 @@ def audit(root=ROOT, index=False):
                 r"\operatorname{",
                 r"\DeclareMathOperator",
                 r"\newcommand",
+                r"\left\{",
+                r"\right\}",
             )
             for line_number, line in enumerate(text.splitlines(), start=1):
                 for macro in unsupported_math_macros:
