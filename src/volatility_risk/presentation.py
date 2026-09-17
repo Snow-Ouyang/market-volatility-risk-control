@@ -84,6 +84,9 @@ def forecast_figures(out, folder, gains, sources):
     bucket_path = out / "forecast/BENCHMARK_RISK_BUCKETS.csv"
     buckets = pd.read_csv(bucket_path)
     sources.append(bucket_path)
+    forecast_path = out / "forecast/FORECASTS.parquet"
+    forecasts = pd.read_parquet(forecast_path)
+    sources.append(forecast_path)
     fig, axes = plt.subplots(1, 2, figsize=(11, 4.8))
     fig.subplots_adjust(left=0.14, right=0.97, bottom=0.2, top=0.71, wspace=0.43)
     title(
@@ -137,6 +140,63 @@ def forecast_figures(out, folder, gains, sources):
         folder,
         "FORECAST_ACCURACY",
         "Positive values favor HAR. Average gains are descriptive; the joint HAR-over-GARCH inference verdict remains WEAK.",
+    )
+
+    fig, axes = plt.subplots(2, 1, figsize=(15, 7.2))
+    fig.subplots_adjust(left=0.075, right=0.98, bottom=0.15, top=0.86, hspace=0.32)
+    title(
+        fig,
+        "Predicted and realized five-day risk through time",
+        "Frozen HAR forecast at each origin versus the subsequent five-session holding-risk target | EXPOSED_HISTORY",
+    )
+    har = forecasts[forecasts.model == "HAR"].copy()
+    har["realized_risk"] = np.sqrt(252 * har.actual) * 100
+    har["predicted_risk"] = np.sqrt(252 * har.forecast) * 100
+    for ax, symbol in zip(axes, ["SPY", "QQQ"]):
+        z = har[har.symbol == symbol].sort_values("session")
+        ax.plot(
+            z.session,
+            z.realized_risk,
+            color="#AAB4BE",
+            lw=0.75,
+            alpha=0.78,
+            label="Realized future 5D risk",
+        )
+        ax.plot(
+            z.session,
+            z.predicted_risk,
+            color=NAVY,
+            lw=1.05,
+            label="HAR predicted 5D risk",
+        )
+        ax.set_title(
+            f"{symbol} | {pd.Timestamp(z.session.iloc[0]):%Y-%m-%d} to {pd.Timestamp(z.session.iloc[-1]):%Y-%m-%d}",
+            loc="left",
+            fontsize=10.5,
+            pad=8,
+        )
+        ax.set_ylabel("Annualized risk (%)")
+        ax.set_ylim(0, max(z.realized_risk.max(), z.predicted_risk.max()) * 1.06)
+        ax.set_xlim(z.session.min(), z.session.max())
+        ax.xaxis.set_major_locator(mdates.YearLocator(3))
+        ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
+        ax.grid(axis="y", color=SHADE, lw=0.6)
+        for _, (lo, hi) in EPISODES.items():
+            ax.axvspan(
+                pd.Timestamp(lo), pd.Timestamp(hi), color=SHADE, alpha=0.45, zorder=0
+            )
+    fig.legend(
+        *axes[0].get_legend_handles_labels(),
+        loc="lower left",
+        bbox_to_anchor=(0.075, 0.06),
+        ncol=2,
+        fontsize=9,
+    )
+    export(
+        fig,
+        folder,
+        "FORECAST_TIMESERIES",
+        "Each origin pairs its after-close forecast with realized HOLD risk over t+1 through t+5; scale = 100 x sqrt(252 x mean daily variance proxy).\nOverlapping five-session targets aid visual comparison; formal inference uses paired block intervals.",
     )
 
     fig, axes = plt.subplots(1, 2, figsize=(11, 5.2), sharey=True)
@@ -638,6 +698,10 @@ Average forecast improvements are positive; the frozen joint HAR-over-GARCH infe
 Lower MSE and QLIKE against both training-selected GARCH and Rolling22, on common model dates for each ETF. No baseline was selected using final test-period performance.
 
 ![HAR forecast error reductions for SPY and QQQ](results/figures/FORECAST_ACCURACY.png)
+
+The full-history view below pairs each forecast origin with the risk subsequently realized over the next five holding sessions, on the same annualized quadratic-risk scale. The overlapping targets make this a visual diagnostic; the formal comparisons continue to use the frozen loss and block-inference protocol.
+
+![HAR predicted and realized future five-day risk through time](results/figures/FORECAST_TIMESERIES.png)
 
 ## A simple risk-control application
 

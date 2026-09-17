@@ -26,6 +26,10 @@ Lower MSE and QLIKE against both training-selected GARCH and Rolling22, on commo
 
 ![HAR forecast error reductions for SPY and QQQ](results/figures/FORECAST_ACCURACY.png)
 
+The full-history view below pairs each forecast origin with the risk subsequently realized over the next five holding sessions, on the same annualized quadratic-risk scale. The overlapping targets make this a visual diagnostic; the formal comparisons continue to use the frozen loss and block-inference protocol.
+
+![HAR predicted and realized future five-day risk through time](results/figures/FORECAST_TIMESERIES.png)
+
 ## A simple risk-control application
 
 **Forecast future five-day risk → scale equity exposure → residual capital earns short-duration Treasury cash carry.**

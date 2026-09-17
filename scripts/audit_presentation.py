@@ -170,7 +170,8 @@ def audit(source, public):
         assert got == [f"{v:.2f}" for v in wants], (row, wants)
         checks += len(got)
     image_links = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text)
-    assert len(image_links) == 7
+    assert len(image_links) == 8
+    assert "results/figures/FORECAST_TIMESERIES.png" in image_links
     for path in image_links:
         assert (public / path).is_file(), path
     assert "Core" not in text and "CORE_VOL" not in text
